@@ -16,7 +16,7 @@ export default function PageHeader({ title, description }: PageHeaderProps) {
         animate={{ opacity: 1, filter: "blur(0px)" }}
         transition={{ duration: 0.4 }}
         >
-        <h1 className="text-3xl md:text-4xl font-bold text-white">{title}</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-white uppercase">{title}</h1>
         <p className="text-lg text-white">{description}</p>
       </motion.div>
     </div>

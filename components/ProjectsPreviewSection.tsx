@@ -22,7 +22,7 @@ const projects = [
 export default function ProjectsPreviewSection() {
   return (
     <section className="py-16 px-6 md:px-20 bg-gray-50 text-center">
-      <h2 className="text-2xl font-bold mb-10">Latest Projects</h2>
+      <h2 className="text-2xl font-bold mb-10 uppercase">Latest Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {projects.map((project, index) => (
           <Link key={index} href={project.href}>

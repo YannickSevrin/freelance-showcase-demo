@@ -25,7 +25,7 @@ export default function MiniServicesSection() {
 
   return (
     <section className="py-16 px-6 md:px-20 bg-gray-50 text-center">
-      <h2 className="text-2xl font-bold mb-10">What I Offer</h2>
+      <h2 className="text-2xl font-bold mb-10 uppercase">What I Offer</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {services.map((service, index) => (

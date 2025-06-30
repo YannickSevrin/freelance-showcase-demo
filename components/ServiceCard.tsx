@@ -9,9 +9,10 @@ interface ServiceCardProps {
   title: string;
   description: string;
   href?: string;
+  features?: string[];
 }
 
-export default function ServiceCard({ icon, title, description, href }: ServiceCardProps) {
+export default function ServiceCard({ icon, title, description, href, features }: ServiceCardProps) {
   const content = (
     <motion.div
       className="bg-white shadow-md rounded-lg p-6 text-center hover:shadow-lg transition hover:scale-105"
@@ -24,6 +25,13 @@ export default function ServiceCard({ icon, title, description, href }: ServiceC
         <h3 className="text-xl font-semibold">{title}</h3>
       </div>
       <p className="text-gray-600 text-sm">{description}</p>
+      {features && (
+        <ul className="list-disc list-inside text-sm text-gray-700 space-y-1 py-4">
+          {features.map((feature, i) => (
+            <li key={i}>{feature}</li>
+          ))}
+        </ul>
+      )}
     </motion.div>
   );
 
