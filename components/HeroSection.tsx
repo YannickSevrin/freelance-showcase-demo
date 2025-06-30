@@ -23,7 +23,7 @@ export default function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-4xl text-white md:text-5xl font-extrabold mb-4">
+        <h1 className="text-4xl text-white md:text-5xl font-extrabold mb-4 uppercase">
           Build your online presence
         </h1>
         <p className="text-lg text-white mb-6">
