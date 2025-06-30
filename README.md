@@ -11,10 +11,11 @@ Ideal as a base for freelancers, developers, startups, or any personal/business 
 - 🎨 Styled with **Tailwind CSS**
 - 🧩 Modular structure using the **App Router**
 - 🌍 Pages: Home, About, Services, Contact
-- 🧠 Reusable components (`Navbar`, `Footer`, `HeroSection`, `PageHeader`, `ServiceCard`, `FinalCTA`)
+- 🧠 Reusable components (`Navbar`, `Footer`, `HeroSection`, `PageHeader`, `ServiceCard`, `FinalCTA`, `Service`)
 - 📱 Fully responsive layout with mobile-first design
 - 🎬 Integrated **Framer Motion** for smooth animations
-- 🖼️ Background image with overlay & gradient in Hero section
+- 🖼️ Background image with overlay & gradient in Hero and Service sections
+- 🔄 Scrollable full-screen services with navigation arrows
 - 🧱 Project previews on homepage
 - 📣 Final call-to-action block
 - 🚀 Ready for deployment with **Vercel**
@@ -25,25 +26,26 @@ Ideal as a base for freelancers, developers, startups, or any personal/business 
 
 ```
 /app
-  ├── layout.tsx              # Global layout (Navbar, fonts, etc.)
-  ├── page.tsx                # Home page with all sections
-  ├── about/page.tsx          # About page with PageHeader
-  ├── services/page.tsx       # Services page
-  └── contact/page.tsx        # Contact page
+  ├── layout.tsx                # Global layout (Navbar, fonts, etc.)
+  ├── page.tsx                  # Home page with all sections
+  ├── about/page.tsx            # About page with PageHeader
+  ├── services/page.tsx         # Services page with full-screen sections
+  └── contact/page.tsx          # Contact page
 
 /components
-  ├── Navbar.tsx              # Navigation bar
-  ├── Footer.tsx              # Site footer
-  ├── HeroSection.tsx         # Hero block with animation & background
-  ├── PageHeader.tsx          # Reusable page header for subpages
-  ├── IntroSection.tsx        # "Who I am" block
-  ├── MiniServicesSection.tsx # 3 service cards preview
+  ├── Navbar.tsx                # Navigation bar
+  ├── Footer.tsx                # Site footer
+  ├── HeroSection.tsx           # Hero block with animation & background
+  ├── PageHeader.tsx            # Reusable page header for subpages
+  ├── IntroSection.tsx          # "Who I am" block
+  ├── MiniServicesSection.tsx   # 3 service cards preview
   ├── ProjectsPreviewSection.tsx # Projects teaser block
-  ├── FinalCTASection.tsx     # Final call-to-action block
-  └── ServiceCard.tsx         # Reusable card for services
+  ├── FinalCTASection.tsx       # Final call-to-action block
+  ├── ServiceCard.tsx           # Reusable card for homepage services
+  └── Service.tsx               # Full-screen service block with navigation
 
 /public
-  └── hero-bg.jpg             # Background image
+  └── hero-bg.jpg               # Background image
 
 /styles
   └── globals.css
@@ -105,6 +107,7 @@ Deploy your site instantly using [Vercel](https://vercel.com/):
 - [x] Add footer with links & social icons
 - [x] Add project previews section
 - [x] Add final CTA section
+- [x] Redesign Services page with full-screen sections
 - [ ] Implement working contact form (e.g. with Resend, EmailJS)
 - [ ] Improve SEO and meta tags
 - [ ] Add dark mode toggle (optional)
