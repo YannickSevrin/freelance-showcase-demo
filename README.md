@@ -11,11 +11,12 @@ Ideal as a base for freelancers, developers, startups, or any personal/business 
 - 🎨 Styled with **Tailwind CSS**
 - 🧩 Modular structure using the **App Router**
 - 🌍 Pages: Home, About, Services, Contact
-- 🧠 Reusable components (`Navbar`, `Footer`, `HeroSection`, `PageHeader`, `ServiceCard`, `FinalCTA`, `Service`)
+- 🧠 Reusable components (`Navbar`, `Footer`, `HeroSection`, `PageHeader`, `ServiceCard`, `FinalCTA`, `Service`, `ContactForm`)
 - 📱 Fully responsive layout with mobile-first design
 - 🎬 Integrated **Framer Motion** for smooth animations
 - 🖼️ Background image with overlay & gradient in Hero and Service sections
 - 🔄 Scrollable full-screen services with navigation arrows
+- 💌 Contact form with **Resend API integration**
 - 🧱 Project previews on homepage
 - 📣 Final call-to-action block
 - 🚀 Ready for deployment with **Vercel**
@@ -30,19 +31,20 @@ Ideal as a base for freelancers, developers, startups, or any personal/business 
   ├── page.tsx                  # Home page with all sections
   ├── about/page.tsx            # About page with PageHeader
   ├── services/page.tsx         # Services page with full-screen sections
-  └── contact/page.tsx          # Contact page
+  └── contact/page.tsx          # Contact page with contact form
 
 /components
-  ├── Navbar.tsx                # Navigation bar
-  ├── Footer.tsx                # Site footer
-  ├── HeroSection.tsx           # Hero block with animation & background
-  ├── PageHeader.tsx            # Reusable page header for subpages
-  ├── IntroSection.tsx          # "Who I am" block
-  ├── MiniServicesSection.tsx   # 3 service cards preview
-  ├── ProjectsPreviewSection.tsx # Projects teaser block
-  ├── FinalCTASection.tsx       # Final call-to-action block
-  ├── ServiceCard.tsx           # Reusable card for homepage services
-  └── Service.tsx               # Full-screen service block with navigation
+  ├── Navbar.tsx
+  ├── Footer.tsx
+  ├── HeroSection.tsx
+  ├── PageHeader.tsx
+  ├── IntroSection.tsx
+  ├── MiniServicesSection.tsx
+  ├── ProjectsPreviewSection.tsx
+  ├── FinalCTASection.tsx
+  ├── ServiceCard.tsx
+  ├── Service.tsx
+  └── ContactForm.tsx
 
 /public
   └── hero-bg.jpg               # Background image
@@ -70,13 +72,35 @@ cd showcase-site
 npm install
 ```
 
-### 3. Run the dev server
+### 3. Setup environment variables
+
+Create a `.env.local` file based on `.env.example`:
+
+```bash
+cp .env.example .env.local
+```
+
+### 4. Run the dev server
 
 ```bash
 npm run dev
 ```
 
 Visit `http://localhost:3000` 🚀
+
+---
+
+## 🔐 Environment Variables
+
+Create a `.env.local` file and include the following:
+
+```env
+RESEND_API_KEY=your-resend-api-key
+RESEND_SEND_FROM=Your Name <onboarding@resend.dev>
+RESEND_SEND_TO=your@email.com
+```
+
+The `ContactForm` uses these to send emails via [Resend](https://resend.com).
 
 ---
 
@@ -87,6 +111,7 @@ Visit `http://localhost:3000` 🚀
 - [Tailwind CSS](https://tailwindcss.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Framer Motion](https://www.framer.com/motion/)
+- [Resend](https://resend.com/) – email API
 
 ---
 
@@ -96,7 +121,8 @@ Deploy your site instantly using [Vercel](https://vercel.com/):
 
 1. Push your code to GitHub
 2. Import your repo on Vercel
-3. Click **Deploy**
+3. Add your environment variables in **Project Settings → Environment Variables**
+4. Click **Deploy**
 
 ---
 
@@ -108,7 +134,7 @@ Deploy your site instantly using [Vercel](https://vercel.com/):
 - [x] Add project previews section
 - [x] Add final CTA section
 - [x] Redesign Services page with full-screen sections
-- [ ] Implement working contact form (e.g. with Resend, EmailJS)
+- [x] Implement working contact form (with Resend)
 - [ ] Improve SEO and meta tags
 - [ ] Add dark mode toggle (optional)
 
