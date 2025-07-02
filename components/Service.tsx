@@ -32,6 +32,7 @@ export default function Service({
 }: ServiceProps) {
   const isLeft = align === "left";
   const isLight = variant === "light";
+  const isFirstSection = !previousId; // Premier service si pas de previousId
 
   return (
     <section
@@ -57,7 +58,7 @@ export default function Service({
           <div
             className={`absolute inset-0 ${
               isLight
-                ? "bg-gradient-to-b from-gray-50/80 via-gray-50/70 to-gray-50/80"
+                ? "bg-gradient-to-b from-white/100 via-white/90 to-white/100"
                 : "bg-gradient-to-b from-black/80 via-black/70 to-black/80"
             }`}
           />
@@ -67,9 +68,10 @@ export default function Service({
       {/* Animated Content */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.4 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        animate={isFirstSection ? { opacity: 1, y: 0 } : undefined}
+        whileInView={!isFirstSection ? { opacity: 1, y: 0 } : undefined}
+        viewport={!isFirstSection ? { once: true, amount: 0.1 } : undefined}
+        transition={{ duration: 0.6, ease: "easeOut", delay: isFirstSection ? 0.2 : 0 }}
         className={`relative z-10 max-w-6xl w-full px-6 md:px-20 flex flex-col md:flex-row items-center gap-12 ${
           isLeft ? "" : "md:flex-row-reverse"
         }`}
@@ -115,14 +117,14 @@ export default function Service({
        
                {/* Previous button */}
         {previousId && (
-          <div className="absolute top-10 z-10 flex justify-center w-full">
+          <div className="absolute top-16 md:top-10 z-10 flex justify-center w-full">
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 const section = document.getElementById(previousId);
                 section?.scrollIntoView({ behavior: "smooth" });
               }}
-              className={`rotate-180 opacity-70 hover:opacity-100 transition ${
+              className={`rotate-180 opacity-70 hover:opacity-100 transition p-2 ${
                 isLight ? "text-black" : "text-white"
               }`}
             >
@@ -143,14 +145,14 @@ export default function Service({
 
                {/* Next button */}
         {nextId && (
-          <div className="absolute bottom-10 z-10 flex justify-center w-full">
+          <div className="absolute bottom-16 md:bottom-10 z-10 flex justify-center w-full">
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 const section = document.getElementById(nextId);
                 section?.scrollIntoView({ behavior: "smooth" });
               }}
-              className={`animate-bounce opacity-70 hover:opacity-100 transition ${
+              className={`animate-bounce opacity-70 hover:opacity-100 transition p-2 ${
                 isLight ? "text-black" : "text-white"
               }`}
             >

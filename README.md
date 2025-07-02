@@ -7,20 +7,38 @@ Ideal as a base for freelancers, developers, startups, or any personal/business 
 
 ## ✨ Features
 
+### 🎯 Core Features
 - ⚡ Built with **Next.js 14** and **TypeScript**
 - 🎨 Styled with **Tailwind CSS**
 - 🧩 Modular structure using the **App Router**
 - 🌍 Pages: Home, About, Services, Contact
-- 🧠 Reusable components (`Navbar`, `Footer`, `HeroSection`, `PageHeader`, `ServiceCard`, `FinalCTA`, `Service`, `ContactForm`, `ToolsSection`)
 - 📱 Fully responsive layout with mobile-first design
-- 🎬 Integrated **Framer Motion** for smooth animations
-- 🖼️ Background image with overlay & gradient in Hero and Service sections
-- 🔄 Scrollable full-screen services with navigation arrows
-- 💌 Contact form with **Resend API integration**
-- 🧱 Project previews on homepage
-- 📣 Final call-to-action block
-- 🧰 Tech stack showcase in **About page**
+- 🎬 **Framer Motion** animations with optimized viewport detection
 - 🚀 Ready for deployment with **Vercel**
+
+### 🧭 Enhanced Navigation (NavBar)
+- 🏷️ **Custom logo** (YS.) with hover effects
+- 🍔 **Mobile burger menu** with slide-out animation
+- 🎯 **Active page indication** with visual styling (black background + white text)
+- 🔄 **Smooth transitions** (200ms duration) for all interactions
+- 📱 **Responsive breakpoints** - burger menu on mobile, horizontal menu on desktop
+- 🎨 **Hover effects** with subtle background changes
+
+### 🎨 Advanced Service Sections
+- 🌈 **Alternating color schemes** - light/dark variants for visual hierarchy
+- ⬅️➡️ **Interactive navigation arrows** between service sections
+- 📱 **Mobile-optimized positioning** - arrows positioned correctly for touch interaction
+- 🖱️ **Click-to-center** functionality on service sections
+- 🎬 **Smart animations** - immediate load for first section, viewport-triggered for others
+- 🖼️ **Dynamic backgrounds** with customizable overlay opacity
+- 💰 **Pricing display** integration
+
+### 🧠 Reusable Components
+- `Navbar` - Smart responsive navigation with active state
+- `Service` - Full-screen service sections with navigation
+- `HeroSection`, `PageHeader`, `ServiceCard`, `ContactForm`, `ToolsSection`
+- 💌 **Contact form** with **Resend API integration**
+- 🧰 **Tech stack showcase** with React Icons
 
 ---
 
@@ -92,6 +110,40 @@ Visit `http://localhost:3000` 🚀
 
 ---
 
+## 🎨 Customization Guide
+
+### 🏷️ Customizing the Logo
+Edit the logo in `components/NavBar.tsx`:
+```tsx
+<Link href="/" className="text-xl font-bold text-black hover:text-gray-700 transition">
+  YS. {/* Change this to your logo/brand */}
+</Link>
+```
+
+### 🎯 Active Page Styling
+Modify active page appearance in `components/NavBar.tsx`:
+```tsx
+// Desktop active state
+? "text-white bg-black px-3 py-2 rounded-lg shadow-sm scale-105"
+
+// Mobile active state  
+? "text-white bg-black shadow-sm scale-105"
+```
+
+### 🌈 Service Color Schemes
+Services automatically alternate between light and dark themes:
+- **Light theme**: White overlay, black text
+- **Dark theme**: Black overlay, white text
+
+Customize in `components/Service.tsx` by modifying the `variant` prop logic.
+
+### 📱 Mobile Breakpoints
+Responsive breakpoints use Tailwind's `md:` prefix (768px):
+- **Mobile**: `< 768px` - Burger menu, vertical layout
+- **Desktop**: `≥ 768px` - Horizontal menu, side-by-side layout
+
+---
+
 ## 🔐 Environment Variables
 
 Create a `.env.local` file and include the following:
@@ -106,14 +158,57 @@ These are used by the `ContactForm` to send emails via [Resend](https://resend.c
 
 ---
 
-## 🛠 Tech Stack
+## 🛠 Tech Stack & Dependencies
 
-- [Next.js](https://nextjs.org/)
-- [React](https://react.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [Resend](https://resend.com/) – email API
+### Core Technologies
+- [Next.js 15](https://nextjs.org/) - React framework with App Router
+- [React 19](https://react.dev/) - UI library
+- [Tailwind CSS 4](https://tailwindcss.com/) - Utility-first CSS framework
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+
+### Animation & UI
+- [Framer Motion](https://www.framer.com/motion/) - Advanced animations with viewport detection
+- [Lucide React](https://lucide.dev/) - Modern icon library (Menu, X, Arrow icons)
+- [React Icons](https://react-icons.github.io/react-icons/) - Tech stack icons (Next.js, React, etc.)
+
+### Backend & Communication
+- [Resend](https://resend.com/) - Email API for contact forms
+
+### Key Hooks & APIs
+- `usePathname` - Next.js navigation hook for active page detection
+- `useState` - React state management for mobile menu
+- `Image` component - Next.js optimized images
+- `scrollIntoView` - Native browser API for smooth navigation
+
+---
+
+## 🔧 Recent Improvements & Best Practices
+
+### 🧭 Navigation Enhancements
+- **Smart Active State Detection**: Uses Next.js `usePathname()` for accurate page detection
+- **Responsive Design**: Desktop horizontal menu transforms into mobile slide-out menu
+- **Visual Feedback**: Active pages highlighted with black background and white text
+- **Accessibility**: Proper ARIA labels and keyboard navigation support
+- **Performance**: Optimized with CSS transitions and event delegation
+
+### 🎨 Service Section Optimizations
+- **Animation Performance**: Fixed viewport detection issues with conditional animations
+- **Mobile UX**: Increased touch target areas and repositioned navigation arrows
+- **Event Handling**: Proper event propagation control to prevent conflicts
+- **Visual Hierarchy**: Alternating light/dark themes for better content separation
+- **Smooth Navigation**: Implemented `scrollIntoView` with smooth behavior
+
+### 📱 Mobile-First Improvements
+- **Touch-Friendly**: Increased button padding and touch targets
+- **Responsive Positioning**: Different positioning for mobile vs desktop
+- **Menu Overlay**: Semi-transparent overlay for better mobile menu UX
+- **Viewport Considerations**: Optimized for mobile browser address bars
+
+### 🎯 Code Quality
+- **TypeScript**: Full type safety with proper interfaces
+- **Component Modularity**: Reusable components with customizable props
+- **Performance**: Optimized animations and reduced layout shifts
+- **SEO Ready**: Environment variables properly configured and .gitignore updated
 
 ---
 
@@ -128,18 +223,30 @@ Deploy your site instantly using [Vercel](https://vercel.com/):
 
 ---
 
-## 📌 To-Do (Next Steps)
+## 📌 Development Progress
 
-- [x] Add Hero section on homepage
-- [x] Create service cards section
-- [x] Add footer with links & social icons
-- [x] Add project previews section
-- [x] Add final CTA section
-- [x] Redesign Services page with full-screen sections
-- [x] Implement working contact form (with Resend)
-- [x] Add About page with tools section
+### ✅ Completed Features
+- [x] Hero section with background image and CTA
+- [x] Service cards and full-screen service sections
+- [x] Responsive navigation with logo and burger menu
+- [x] Active page indication with visual styling
+- [x] Working contact form with Resend API
+- [x] About page with tools/tech stack showcase
+- [x] Smooth animations with Framer Motion
+- [x] Mobile-optimized service navigation
+- [x] Alternating color schemes for services
+- [x] Event handling and touch optimization
+- [x] Environment variables and security setup
+
+### 🔄 Next Steps
 - [ ] Improve SEO and meta tags
-- [ ] Add dark mode toggle (optional)
+- [ ] Add loading states and error boundaries
+- [ ] Implement blog/portfolio section
+- [ ] Add dark mode toggle
+- [ ] Performance monitoring and analytics
+- [ ] Add more animation variants
+- [ ] Implement lazy loading for images
+- [ ] Add unit/integration tests
 
 ---
 
