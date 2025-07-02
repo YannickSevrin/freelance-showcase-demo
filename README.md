@@ -11,7 +11,7 @@ Ideal as a base for freelancers, developers, startups, or any personal/business 
 - 🎨 Styled with **Tailwind CSS**
 - 🧩 Modular structure using the **App Router**
 - 🌍 Pages: Home, About, Services, Contact
-- 🧠 Reusable components (`Navbar`, `Footer`, `HeroSection`, `PageHeader`, `ServiceCard`, `FinalCTA`, `Service`, `ContactForm`)
+- 🧠 Reusable components (`Navbar`, `Footer`, `HeroSection`, `PageHeader`, `ServiceCard`, `FinalCTA`, `Service`, `ContactForm`, `ToolsSection`)
 - 📱 Fully responsive layout with mobile-first design
 - 🎬 Integrated **Framer Motion** for smooth animations
 - 🖼️ Background image with overlay & gradient in Hero and Service sections
@@ -19,6 +19,7 @@ Ideal as a base for freelancers, developers, startups, or any personal/business 
 - 💌 Contact form with **Resend API integration**
 - 🧱 Project previews on homepage
 - 📣 Final call-to-action block
+- 🧰 Tech stack showcase in **About page**
 - 🚀 Ready for deployment with **Vercel**
 
 ---
@@ -27,11 +28,11 @@ Ideal as a base for freelancers, developers, startups, or any personal/business 
 
 ```
 /app
-  ├── layout.tsx                # Global layout (Navbar, fonts, etc.)
-  ├── page.tsx                  # Home page with all sections
-  ├── about/page.tsx            # About page with PageHeader
-  ├── services/page.tsx         # Services page with full-screen sections
-  └── contact/page.tsx          # Contact page with contact form
+  ├── layout.tsx                  # Global layout (Navbar, fonts, etc.)
+  ├── page.tsx                    # Home page with all sections
+  ├── about/page.tsx              # About page with PageHeader & ToolsSection
+  ├── services/page.tsx           # Services page with full-screen sections
+  └── contact/page.tsx            # Contact page with contact form
 
 /components
   ├── Navbar.tsx
@@ -44,10 +45,11 @@ Ideal as a base for freelancers, developers, startups, or any personal/business 
   ├── FinalCTASection.tsx
   ├── ServiceCard.tsx
   ├── Service.tsx
-  └── ContactForm.tsx
+  ├── ContactForm.tsx
+  └── ToolsSection.tsx            # Tech icons section in About page
 
 /public
-  └── hero-bg.jpg               # Background image
+  └── hero-bg.jpg
 
 /styles
   └── globals.css
@@ -100,7 +102,7 @@ RESEND_SEND_FROM=Your Name <onboarding@resend.dev>
 RESEND_SEND_TO=your@email.com
 ```
 
-The `ContactForm` uses these to send emails via [Resend](https://resend.com).
+These are used by the `ContactForm` to send emails via [Resend](https://resend.com).
 
 ---
 
@@ -135,6 +137,7 @@ Deploy your site instantly using [Vercel](https://vercel.com/):
 - [x] Add final CTA section
 - [x] Redesign Services page with full-screen sections
 - [x] Implement working contact form (with Resend)
+- [x] Add About page with tools section
 - [ ] Improve SEO and meta tags
 - [ ] Add dark mode toggle (optional)
 
