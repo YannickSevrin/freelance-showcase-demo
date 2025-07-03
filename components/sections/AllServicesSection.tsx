@@ -1,6 +1,6 @@
 "use client";
 
-import Service from "./Service";
+import Service from "../cards/Service";
 
 const services = [
   {

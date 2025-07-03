@@ -9,6 +9,7 @@ export default function ContactForm() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [isDemo, setIsDemo] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,6 +24,8 @@ export default function ContactForm() {
 
       if (!res.ok) throw new Error("Error sending message");
 
+      const result = await res.json();
+      setIsDemo(result.demo || false);
       setStatus("success");
       setName("");
       setEmail("");
@@ -85,7 +88,18 @@ export default function ContactForm() {
         </button>
 
         {status === "success" && (
-          <p className="text-green-600 text-center font-medium">✅ Message sent successfully!</p>
+          <div className="text-center">
+            {isDemo ? (
+              <div className="space-y-2">
+                <p className="text-green-600 font-medium">✅ Message sent successfully!</p>
+                <p className="text-sm text-gray-600 italic">
+                  📧 Demo mode: No actual email was sent. This is for demonstration purposes.
+                </p>
+              </div>
+            ) : (
+              <p className="text-green-600 font-medium">✅ Message sent successfully!</p>
+            )}
+          </div>
         )}
         {status === "error" && (
           <p className="text-red-600 text-center font-medium">❌ Error sending message. Try again.</p>
