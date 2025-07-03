@@ -1,7 +1,9 @@
-import PageHeader from "@/components/PageHeader";
-import AllServicesSection from "@/components/AllServicesSection";
-import FinalCTASection from "@/components/FinalCTASection";
-import Footer from "@/components/Footer";
+import { 
+  PageHeader, 
+  AllServicesSection, 
+  FinalCTASection, 
+  Footer 
+} from "@/components";
 
 export default function ServicesPage() {
     return (

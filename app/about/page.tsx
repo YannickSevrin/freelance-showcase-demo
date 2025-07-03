@@ -1,8 +1,10 @@
-import PageHeader from "@/components/PageHeader";
-import AboutIntroSection from "@/components/AboutIntroSection";
-import FinalCTASection from "@/components/FinalCTASection";
-import Footer from "@/components/Footer";
-import ToolsSection from "@/components/ToolsSection";
+import { 
+  PageHeader, 
+  AboutIntroSection, 
+  FinalCTASection, 
+  Footer, 
+  ToolsSection 
+} from "@/components";
 
 export default function About() {
     return (
