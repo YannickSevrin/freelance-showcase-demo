@@ -9,7 +9,7 @@ import {
 export default function About() {
     return (
         <div>
-            <PageHeader title="About Me" description="This is a simple showcase website made with Next.js." />
+            <PageHeader title="About This Demo" description="This is a demonstration showcase website built with Next.js, showcasing modern web development techniques." />
             <AboutIntroSection />
             <ToolsSection />
             <FinalCTASection />

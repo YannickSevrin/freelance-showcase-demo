@@ -11,13 +11,13 @@ Ideal as a base for freelancers, developers, startups, or any personal/business 
 - ⚡ Built with **Next.js 15** and **TypeScript**
 - 🎨 Styled with **Tailwind CSS**
 - 🧩 Modular structure using the **App Router**
-- 🌍 Pages: Home, About, Services, Projects, Contact
+- 🌍 Pages: Home, About, Services, Projects, Contact + Legal pages (Privacy, Terms, Legal Notice, Site Map)
 - 📱 Fully responsive layout with mobile-first design
 - 🎬 **Framer Motion** animations with optimized viewport detection
 - 🚀 Ready for deployment with **Vercel**
 
 ### 🧭 Enhanced Navigation (NavBar)
-- 🏷️ **Custom logo** (YS.) with hover effects
+- 🏷️ **Custom logo** (YS-DEMO) with hover effects - clearly indicates demo site
 - 🍔 **Mobile burger menu** with slide-out animation
 - 🎯 **Active page indication** with visual styling (black background + white text)
 - 🔄 **Smooth transitions** (200ms duration) for all interactions
@@ -47,6 +47,13 @@ Ideal as a base for freelancers, developers, startups, or any personal/business 
 - 🧰 **Reusable components** with consistent props interface
 - 📝 **Comprehensive documentation** in `components/README.md`
 
+### ⚖️ Legal Pages (Demo)
+- 🔒 **Privacy Policy** - Example data protection and privacy practices
+- 📜 **Terms of Service** - Sample terms and conditions
+- 📋 **Legal Notice** - Demonstration legal information
+- 🗺️ **Site Map** - Complete website structure and navigation guide
+- ⚠️ **All clearly marked as demo content** - Not legally binding
+
 ---
 
 ## 📁 Project Structure
@@ -59,6 +66,10 @@ Ideal as a base for freelancers, developers, startups, or any personal/business 
   ├── services/page.tsx           # Full-screen service sections
   ├── projects/page.tsx           # Complete project portfolio
   ├── contact/page.tsx            # Contact form page
+  ├── privacy/page.tsx            # Privacy policy (demo)
+  ├── terms/page.tsx              # Terms of service (demo)
+  ├── legal/page.tsx              # Legal notice (demo)
+  ├── sitemap/page.tsx            # Site map and structure
   └── api/contact/route.ts        # API endpoint for contact form
 
 /components
@@ -138,7 +149,7 @@ Visit `http://localhost:3000` 🚀
 Edit the logo in `components/layout/NavBar.tsx`:
 ```tsx
 <Link href="/" className="text-xl font-bold text-black hover:text-gray-700 transition">
-  YS. {/* Change this to your logo/brand */}
+  YS-DEMO {/* Change this to your logo/brand */}
 </Link>
 ```
 

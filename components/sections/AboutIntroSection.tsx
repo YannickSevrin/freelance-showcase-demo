@@ -9,20 +9,29 @@ export default function AboutIntroSection() {
       <motion.div
         className="flex flex-col md:flex-row items-center gap-10"
         initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
-        viewport={{ once: true }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <div className="flex-1 text-center md:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">I’m Yannick 👋</h2>
+        <motion.div 
+          className="flex-1 text-center md:text-left"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Demo Developer Profile 👋</h2>
           <p className="text-lg text-gray-700">
-            I’m a passionate frontend developer focused on building modern, performant and elegant web experiences.
+            This is a demonstration of a freelance developer showcase website built with modern technologies.
             <br /><br />
-            I enjoy creating websites that are both functional and visually appealing. I'm currently working with technologies like React, Next.js, Tailwind CSS and more.
+            This template demonstrates how to present skills, projects, and services in a professional and visually appealing way using React, Next.js, Tailwind CSS, and Framer Motion.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="w-60 h-60 relative rounded-full overflow-hidden border-4 border-black shadow-lg">
+        <motion.div 
+          className="w-60 h-60 relative rounded-full overflow-hidden border-4 border-black shadow-lg"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
           <Image
             src="/images/about/portrait.png"
             alt="Portrait"
@@ -30,7 +39,7 @@ export default function AboutIntroSection() {
             fill
             className="object-cover"
           />
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );

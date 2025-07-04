@@ -8,7 +8,7 @@ import {
 export default function ServicesPage() {
     return (
         <div>
-            <PageHeader title="Services" description="Here are the services we offer to our clients." />
+            <PageHeader title="Demo Services" description="Example services page showcasing different service offerings and pricing." />
             <AllServicesSection />
             <FinalCTASection />
             <Footer />
