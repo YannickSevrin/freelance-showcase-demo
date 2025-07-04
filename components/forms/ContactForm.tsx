@@ -42,11 +42,14 @@ export default function ContactForm() {
         onSubmit={handleSubmit}
         className="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg space-y-6"
         initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.4 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <div>
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
           <label className="block text-sm font-semibold mb-1 text-gray-700">Name</label>
           <input
             type="text"
@@ -55,9 +58,13 @@ export default function ContactForm() {
             onChange={(e) => setName(e.target.value)}
             className="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring focus:ring-blue-200"
           />
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
           <label className="block text-sm font-semibold mb-1 text-gray-700">Email</label>
           <input
             type="email"
@@ -66,9 +73,13 @@ export default function ContactForm() {
             onChange={(e) => setEmail(e.target.value)}
             className="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring focus:ring-blue-200"
           />
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+        >
           <label className="block text-sm font-semibold mb-1 text-gray-700">Message</label>
           <textarea
             rows={5}
@@ -77,18 +88,26 @@ export default function ContactForm() {
             onChange={(e) => setMessage(e.target.value)}
             className="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring focus:ring-blue-200"
           />
-        </div>
+        </motion.div>
 
-        <button
+        <motion.button
           type="submit"
           disabled={status === "loading"}
           className="w-full bg-black text-white py-3 rounded hover:bg-gray-800 transition disabled:opacity-50"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.7 }}
         >
           {status === "loading" ? "Sending..." : "Send Message"}
-        </button>
+        </motion.button>
 
         {status === "success" && (
-          <div className="text-center">
+          <motion.div 
+            className="text-center"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
+          >
             {isDemo ? (
               <div className="space-y-2">
                 <p className="text-green-600 font-medium">✅ Message sent successfully!</p>
@@ -99,10 +118,17 @@ export default function ContactForm() {
             ) : (
               <p className="text-green-600 font-medium">✅ Message sent successfully!</p>
             )}
-          </div>
+          </motion.div>
         )}
         {status === "error" && (
-          <p className="text-red-600 text-center font-medium">❌ Error sending message. Try again.</p>
+          <motion.p 
+            className="text-red-600 text-center font-medium"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
+          >
+            ❌ Error sending message. Try again.
+          </motion.p>
         )}
       </motion.form>
     </section>

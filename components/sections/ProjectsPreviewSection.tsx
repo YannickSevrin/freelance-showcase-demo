@@ -1,4 +1,3 @@
-
 "use client";
 
 import { getFeaturedProjects } from "@/data/projects";
@@ -10,7 +9,7 @@ export default function ProjectsPreviewSection() {
 
   return (
     <section className="py-16 px-6 md:px-20 bg-gray-50 text-center">
-      <h2 className="text-2xl font-bold mb-10 uppercase">Latest Projects</h2>
+      <h2 className="text-2xl font-bold mb-10 uppercase">Demo Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {featuredProjects.map((project, index) => (
           <ProjectCard
@@ -20,6 +19,7 @@ export default function ProjectsPreviewSection() {
             image={project.image}
             slug={project.slug}
             technologies={project.technologies}
+            index={index}
           />
         ))}
       </div>
@@ -30,7 +30,7 @@ export default function ProjectsPreviewSection() {
           href="/projects"
           className="inline-block bg-black text-white px-8 py-3 rounded-lg transition font-medium hover:scale-105"
         >
-          View All Projects →
+          View All Demo Projects →
         </Link>
       </div>
     </section>

@@ -24,10 +24,10 @@ export default function HeroSection() {
         transition={{ duration: 0.6 }}
       >
         <h1 className="text-4xl text-white md:text-5xl font-extrabold mb-4 uppercase">
-          Build your online presence
+          Demo Freelance Website
         </h1>
         <p className="text-lg text-white mb-6">
-          I create modern, responsive websites to showcase your brand or business.
+          This is a demonstration showcase website built with Next.js & Tailwind CSS. Perfect template for freelancers and agencies.
         </p>
         <Link href="/contact">
           <motion.button
@@ -35,7 +35,7 @@ export default function HeroSection() {
             whileTap={{ scale: 0.95 }}
             className="px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition"
           >
-            Let’s Work Together
+            Try Demo Contact
           </motion.button>
         </Link>
       </motion.div>

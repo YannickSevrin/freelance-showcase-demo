@@ -37,7 +37,7 @@ const Navbar = () => {
       <div className="flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="text-xl font-bold text-black hover:text-gray-700 transition">
-          YS.
+          YS-DEMO
         </Link>
 
         {/* Desktop Menu */}
