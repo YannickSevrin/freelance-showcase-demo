@@ -1,4 +1,4 @@
-import { PageHeader, ProjectCard } from "@/components";
+import { Footer, PageHeader, ProjectCard } from "@/components";
 import { projects } from "@/data/projects";
 
 export default function ProjectsPage() {
@@ -25,6 +25,7 @@ export default function ProjectsPage() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
