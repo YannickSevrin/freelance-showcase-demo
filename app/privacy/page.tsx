@@ -1,4 +1,23 @@
 import { PageHeader, Footer } from "@/components";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy [Demo]",
+  description: "Demo privacy policy page showcasing professional legal page structure. This is example content for demonstration purposes only and is not legally binding.",
+  keywords: ["privacy policy demo", "legal page example", "demo privacy terms", "data protection demo", "website privacy example"],
+  openGraph: {
+    title: "Privacy Policy Demo | YS-DEMO Legal Pages",
+    description: "Explore a professional privacy policy page structure. Demo content showing how to present privacy information on freelance websites.",
+  },
+  twitter: {
+    title: "Privacy Policy Demo | YS-DEMO Legal Pages",
+    description: "Explore a professional privacy policy page structure. Demo content showing how to present privacy information on freelance websites.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function PrivacyPage() {
   return (
