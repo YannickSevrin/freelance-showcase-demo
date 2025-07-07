@@ -1,4 +1,23 @@
 import { PageHeader, Footer } from "@/components";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms of Service [Demo]",
+  description: "Demo terms of service page showcasing professional legal page structure. This is example content for demonstration purposes only and is not legally binding.",
+  keywords: ["terms of service demo", "legal terms example", "demo terms conditions", "website terms demo", "service terms example"],
+  openGraph: {
+    title: "Terms of Service Demo | YS-DEMO Legal Pages",
+    description: "Explore a professional terms of service page structure. Demo content showing how to present service terms on freelance websites.",
+  },
+  twitter: {
+    title: "Terms of Service Demo | YS-DEMO Legal Pages",
+    description: "Explore a professional terms of service page structure. Demo content showing how to present service terms on freelance websites.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function TermsPage() {
   return (

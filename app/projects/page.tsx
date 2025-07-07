@@ -1,5 +1,28 @@
 import { Footer, PageHeader, ProjectCard } from "@/components";
 import { projects } from "@/data/projects";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Demo Projects",
+  description: "Explore a curated collection of demo projects showcasing various web development techniques, technologies, and design patterns. Examples of modern web applications built with React, Next.js, and more.",
+  keywords: ["demo projects", "web development portfolio", "React projects", "Next.js examples", "project showcase", "web development demos"],
+  openGraph: {
+    title: "Demo Projects | YS-DEMO Portfolio Showcase",
+    description: "Browse through a collection of demonstration projects featuring modern web development practices, responsive designs, and cutting-edge technologies.",
+    images: [
+      {
+        url: "/images/hero-bg.png",
+        width: 1200,
+        height: 630,
+        alt: "YS-DEMO Projects Portfolio Demo",
+      },
+    ],
+  },
+  twitter: {
+    title: "Demo Projects | YS-DEMO Portfolio Showcase", 
+    description: "Browse through a collection of demonstration projects featuring modern web development practices, responsive designs, and cutting-edge technologies.",
+  },
+};
 
 export default function ProjectsPage() {
   return (

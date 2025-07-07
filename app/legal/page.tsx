@@ -1,4 +1,23 @@
 import { PageHeader, Footer } from "@/components";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Legal Notice [Demo]",
+  description: "Demo legal notice page showcasing professional legal page structure. Technical information and disclaimers for this demonstration website.",
+  keywords: ["legal notice demo", "legal information example", "demo legal page", "website legal notice", "technical legal info"],
+  openGraph: {
+    title: "Legal Notice Demo | YS-DEMO Legal Pages",
+    description: "Explore a professional legal notice page structure. Demo content showing website legal information and technical details.",
+  },
+  twitter: {
+    title: "Legal Notice Demo | YS-DEMO Legal Pages",
+    description: "Explore a professional legal notice page structure. Demo content showing website legal information and technical details.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function LegalPage() {
   return (

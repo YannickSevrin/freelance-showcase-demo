@@ -1,5 +1,24 @@
 import { PageHeader, Footer } from "@/components";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Site Map [Demo]",
+  description: "Complete navigation structure of the YS-DEMO freelance showcase website. Explore all demo pages, features, and technologies in this interactive site map.",
+  keywords: ["demo sitemap", "website navigation", "site structure demo", "page directory", "website map demo"],
+  openGraph: {
+    title: "Site Map Demo | YS-DEMO Navigation Guide",
+    description: "Navigate through the complete structure of this demo freelance website. Interactive guide to all pages and features.",
+  },
+  twitter: {
+    title: "Site Map Demo | YS-DEMO Navigation Guide",
+    description: "Navigate through the complete structure of this demo freelance website. Interactive guide to all pages and features.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function SitemapPage() {
   return (
@@ -128,7 +147,7 @@ export default function SitemapPage() {
             <h3 className="text-lg font-semibold text-green-800 mb-4">🚀 How to Explore This Demo</h3>
             <div className="text-green-700 space-y-2">
               <p>• <strong>Navigate freely:</strong> All pages are functional and safe to explore</p>
-              <p>• <strong>Test the contact form:</strong> It's in demo mode - no emails will be sent</p>
+              <p>• <strong>Test the contact form:</strong> It&apos;s in demo mode - no emails will be sent</p>
               <p>• <strong>Check responsive design:</strong> Try different screen sizes</p>
               <p>• <strong>Explore animations:</strong> Hover effects and smooth transitions throughout</p>
               <p>• <strong>View the code:</strong> This is open for learning and inspiration</p>
