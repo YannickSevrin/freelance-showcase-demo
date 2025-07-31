@@ -36,7 +36,7 @@ export default function Footer() {
                 <Link href="/privacy" className="text-gray-400 hover:text-white transition">Privacy Policy</Link>
                 <Link href="/terms" className="text-gray-400 hover:text-white transition">Terms of Service</Link>
                 <Link href="/legal" className="text-gray-400 hover:text-white transition">Legal Notice</Link>
-                <Link href="/sitemap" className="text-gray-400 hover:text-white transition">Site Map</Link>
+                <Link href="/site-map" className="text-gray-400 hover:text-white transition">Site Map</Link>
               </div>
             </div>
           </div>

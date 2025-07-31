@@ -94,7 +94,7 @@ export default function SitemapPage() {
                   <p className="text-sm text-gray-600">Example legal notice (not legally binding)</p>
                 </Link>
 
-                <Link href="/sitemap" className="block p-4 border border-gray-200 rounded-lg bg-gray-100">
+                <Link href="/site-map" className="block p-4 border border-gray-200 rounded-lg bg-gray-100">
                   <h4 className="font-semibold">🗺️ Site Map</h4>
                   <p className="text-sm text-gray-600">This page - complete site structure</p>
                 </Link>

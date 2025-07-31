@@ -71,7 +71,7 @@ export default function RootLayout({
     "description": "A demonstration freelance showcase website built with Next.js, Tailwind CSS, and Framer Motion. Professional demo featuring modern web development practices.",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "/sitemap",
+              "target": "/site-map",
       "query-input": "required name=search_term_string"
     },
     "author": {
